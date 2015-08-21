@@ -1,0 +1,13 @@
+<!-- needs to be passed a @decks object
+specify link to individual decks
+add navigational links -->
+
+<h1>Playable Decks:</h1>
+
+<% @decks.each do |deck| %>
+  <div class="box"><a href=""><% deck.name %></a></div>
+<% end %>
+
+<footer>
+  <p><a href="http://127.0.0.1:9393/">nav links</a><p>
+</footer>

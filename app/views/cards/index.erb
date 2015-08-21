@@ -1,0 +1,18 @@
+<!-- needs to be passed a @deck object & a @card object @round object
+add navigational links -->
+
+<h1><% @deck.name %></h1>
+
+<div class="center-box">
+  <% @card.question %>
+</div>
+
+<% if @round.guesses == 3 %>
+  <div class="center-box">
+    <% @card.answer %>
+  </div>
+<% end %>
+
+<footer>
+  <p><a href="http://127.0.0.1:9393/">nav links</a><p>
+</footer>
