@@ -17,14 +17,14 @@ post '/games/:game_id/cards/:id' do
   if @game && @card
     @deck = @game.deck
     if @card.answer.downcase == params[:card][:answer].downcase
-      redirect "/games/#{@game.id}/cards/#{@next_card.id}" unless @next_card==nil
-      #redirect to profile
-      redirect "/"
+      redirect "/games/#{@game.id}/done" if @next_card==nil
+      redirect "/games/#{@game.id}/cards/#{@next_card.id}"
     else
       redirect "/games/#{@game.id}/cards/#{@card.id}"
     end
   else
-    "error"
+    flash[:errors] = @game.errors.full_messages + @card.errors.full_messages
+    redirect "/games/#{@game.id}/cards/#{@card.id}"
   end
 end
 
