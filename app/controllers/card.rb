@@ -1,13 +1,3 @@
-get '/decks/:id/games/new' do
-  @deck = Deck.find_by(id: params[:id])
-  @game = Game.new(deck: @deck)
-  if @game.save
-    erb :'games/new'
-  else
-    "error"
-  end
-end
-
 get '/games/:game_id/cards/:id' do
   @game = Game.find_by(id: params[:game_id])
   @card = Card.find_by(id:params[:id])
@@ -55,28 +45,6 @@ end
 #     else
 #     end
 #   else
-#     "error"
-#   end
-# end
-
-# get '/decks/:id/games/new' do
-#   @deck = Deck.find_by(id:params[:id])
-#   @game = Game.new(deck: @deck, round:Round.new)
-#   if @game.save
-#     erb :'games/new'
-#   else
-#     "error"
-#   end
-# end
-
-# get '/games/:id' do
-#   @game = Game.find_by(id:params[:id])
-#   @deck = @game.deck
-#   @rounds = @game.rounds
-#   if @game
-#     if
-#   else
-#     status 404
 #     "error"
 #   end
 # end
