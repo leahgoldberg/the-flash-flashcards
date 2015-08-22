@@ -5,4 +5,8 @@ class Game < ActiveRecord::Base
 
   def stats
   end
+
+  def play
+
+  end
 end

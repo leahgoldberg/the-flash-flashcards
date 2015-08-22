@@ -1,18 +1,12 @@
 <!-- needs to be passed a @deck object & a @card object @round object -->
 
-<h1><% @deck.name %></h1>
+<h1><%= @deck.name %></h1>
 
 <div class="card">
-  <% @card.question %>
+  <%= @card.question %>
 </div>
 
-<% if @round.guesses == 3 %>
-  <div class="card">
-    <% @card.answer %>
-  </div>
-<% end %>
-
 <div class="input-form">
-  <% erb :'/_form.erb' %>
+  <%= erb :'cards/_form', locals: {game: @game, card: @card} %>
 </div>
 

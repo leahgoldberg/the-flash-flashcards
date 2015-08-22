@@ -18,8 +18,10 @@
   <title>Flashcards</title>
 </head>
 <body>
-  <% erb :'/_header.erb' %>
+  <%= erb :'_header' %>
+  <section class="content">
   <%= yield %>
+  </section>
 </body>
 
 

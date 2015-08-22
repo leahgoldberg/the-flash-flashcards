@@ -30,6 +30,10 @@ header {
   left: 0;
   right: 0;
   border-bottom: 2px solid black;
+  top: 0;
+}
+.content {
+  margin-top: 150px;
 }
 
 
