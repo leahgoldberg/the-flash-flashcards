@@ -1,6 +1,7 @@
 get '/' do
-  if logged_in?
-    redirect '/decks'
+  if signed_in?
+    @decks = Deck.all
+    erb :'/welcome/index'
   else
     erb :'/index'
   end
