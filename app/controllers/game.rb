@@ -10,7 +10,7 @@ end
 
 get '/decks/:id/games/new' do
   @deck = Deck.find_by(id: params[:id])
-  @game = Game.new(deck: @deck)
+  @game = Game.new(deck: @deck, user: current_user)
   if @deck && @game.save
     erb :'games/new'
   else

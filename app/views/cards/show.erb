@@ -2,9 +2,18 @@
 
 <h1><%= @deck.name %></h1>
 
+<% if flash[:message] %>
+  <%= flash[:message] %>
+<% end %>
+
 <div class="card">
   <%= @card.question %>
 </div>
+
+<% if @guess == 3 %>
+<%= @card.answer %>
+<p><a href="/games/<%=@game.id%>/cards/<%=Card.find_by(id: @card.id+1)%>">Go to next card</a></p>
+<% end %>
 
 <div class="input-form">
   <%= erb :'cards/_form', locals: {game: @game, card: @card} %>
