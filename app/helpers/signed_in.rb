@@ -8,10 +8,6 @@ helpers do
   end
 
   def current_user
-    if signed_in?
-      User.find_by(id: session[:user_id])
-    else
-      nil
-    end
+    User.find_by(id: session[:user_id]) if signed_in?
   end
 end
