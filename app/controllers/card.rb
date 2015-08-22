@@ -9,6 +9,7 @@ get '/decks/:id/games/new' do
 end
 
 get '/games/:game_id/cards/:id' do
+  @game = Game.find_by(id: params[:game_id])
   @card = Card.find_by(id:params[:id])
   if @card
     @deck = @card.deck
