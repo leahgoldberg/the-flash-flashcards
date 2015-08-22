@@ -1,0 +1,36 @@
+h1 {
+  text-align: center;
+}
+.deck {
+  margin: 20px;
+  width: 320px;
+  padding: 0px 20px 20px 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.card {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 100px;
+  margin: 20px auto;
+}
+th {
+  text-align: left;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  border-bottom: 2px solid black;
+}
+
+
+
+
