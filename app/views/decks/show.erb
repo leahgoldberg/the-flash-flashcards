@@ -7,6 +7,7 @@
   </ul>
 
   <form action="/rounds" method="post">
+    <input type="hidden" name="round[deck_id]" value="<%= @deck.id %>">
     <br><input type="submit" value="Play"></br>
   </form>
 </div>

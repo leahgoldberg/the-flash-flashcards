@@ -1,0 +1,7 @@
+<div><%= @card.question %></div>
+<form action="/guess" method="post">
+  <input type="hidden" name="id" value="<%= @card.id %>">
+  <input type="hidden" name="round_id" value="<%= @round.id %>">
+  <div><textarea name="answer" placeholder="Answer"/></textarea></div>
+  <div><input type="submit" value="Submit"></div>
+</form>
