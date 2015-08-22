@@ -2,6 +2,9 @@ html{
   background-color: #7FC7AF;
 }
 
+form {
+  text-align: center;
+}
 
 .header_bar{
   background-color: black;
@@ -32,10 +35,14 @@ html{
 
 .container {
   background-color: white;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 30%;
+  margin-right: 30%;
   margin-top: 2em;
-  padding: 2em;
+  padding: 1em;
   border-style: solid;
   border-width: 5px;
+}
+
+.entry {
+  text-align: center;
 }
