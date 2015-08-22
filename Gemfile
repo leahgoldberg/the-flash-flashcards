@@ -13,10 +13,12 @@ gem 'activerecord', '~>4.2.0'
 gem 'rake'
 
 gem 'shotgun'
-gem 'faker'
 
 gem 'bcrypt'
 gem 'faker'
+gem 'sinatra-flash'
+gem 'sinatra-redirect-with-flash'
+gem 'pry'
 
 group :test do
   gem 'shoulda-matchers'
