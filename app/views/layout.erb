@@ -12,17 +12,25 @@
   -->
   <link rel="stylesheet" href="/css/application.css">
 
+  <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,700' rel='stylesheet' type='text/css'>
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
   <title></title>
 </head>
+
+<div class = "header_bar">
+  <header id='header'>
     FlashCards by ESB
+  </header>
   <nav id='nav'>
     <a href="/">Home</a>
     <a href="/users/<%= session[:user_id] %>">Stats</a>
     <a href="/users/signout">Sign Out</a>
   </nav>
+</div>
+
 <body>
   <%= yield %>
 </body>

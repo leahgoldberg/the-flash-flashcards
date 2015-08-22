@@ -1,8 +1,9 @@
-<h1>Hello <%= current_user.username %>! </h1>
-
-<h2><a href="/users/signout">Sign Out </a></h2>
-
 <div class = "container">
+
+  <div class = "page_headline">
+    Hello <%= current_user.username %>! You should choose a deck...
+  </div>
+
   <% @decks.each do |deck| %>
   <li><a href = "decks/<%= deck.id %>"><%= deck.name %></a></li>
   <% end %>
