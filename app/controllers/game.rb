@@ -11,6 +11,7 @@ end
 get '/decks/:id/games/new' do
   @deck = Deck.find_by(id: params[:id])
   @game = Game.new(deck: @deck, user: current_user)
+  @game.rounds << Round.new(game:@game)
   if @deck && @game.save
     erb :'games/new'
   else

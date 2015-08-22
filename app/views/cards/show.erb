@@ -10,9 +10,9 @@
   <%= @card.question %>
 </div>
 
-<% if @guess == 3 %>
+<% if @guess_num == 3 %>
 <%= @card.answer %>
-<p><a href="/games/<%=@game.id%>/cards/<%=Card.find_by(id: @card.id+1)%>">Go to next card</a></p>
+<p><a href="/games/<%=@game.id%>/cards/<%=@next_card.id%>">Go to next card</a></p>
 <% end %>
 
 <div class="input-form">
