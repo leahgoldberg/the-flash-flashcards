@@ -6,11 +6,11 @@
   <% @card.question %>
 </div>
 
-<% if @round.guesses == 3 %>
+<!-- <% if @round.guesses == 3 %>
   <div class="card">
     <% @card.answer %>
   </div>
-<% end %>
+<% end %>  -->
 
 <div class="input-form">
   <% erb :'/_form.erb', locals: {deck: @deck, card: @card} %>
