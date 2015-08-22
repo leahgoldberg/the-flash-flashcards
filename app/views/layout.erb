@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
@@ -17,6 +17,12 @@
 
   <title></title>
 </head>
+    FlashCards by ESB
+  <nav id='nav'>
+    <a href="/">Home</a>
+    <a href="/user/<%= session[:user_id]%>">Stats</a>
+    <a href="/signout">Sign Out</a>
+  </nav>
 <body>
   <%= yield %>
 </body>
