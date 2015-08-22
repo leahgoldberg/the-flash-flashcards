@@ -17,6 +17,8 @@
 
   <title></title>
 </head>
+
+<div class = "header_bar">
   <header id='header'>
     FlashCards by ESB
   </header>
@@ -25,6 +27,8 @@
     <a href="/users/<%= session[:user_id] %>">Stats</a>
     <a href="/users/signout">Sign Out</a>
   </nav>
+</div>
+
 <body>
   <%= yield %>
 </body>
