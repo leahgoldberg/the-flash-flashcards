@@ -10,7 +10,7 @@ class Round < ActiveRecord::Base
 
   def available_cards
     cards.select do |card|
-      card.has_no_guesses? && card.has_incorrect_guesses?
+      card.has_no_guesses?(self) || card.has_incorrect_guesses?(self)
     end
   end
 end
