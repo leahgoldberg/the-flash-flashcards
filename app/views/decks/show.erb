@@ -1,10 +1,12 @@
 <div class = "container">
   <h1><%= @deck.name %></h1>
-  <ul>
-    <% @cards.each do |card| %>
-    <li><%= card.question %>: <%= card.answer %></li>
-    <% end %>
-  </ul>
+  <div id = "deck_list">
+    <ul>
+      <% @cards.each do |card| %>
+      <li><%= card.question %>: <%= card.answer %></li>
+      <% end %>
+    </ul>
+  </div>
 
   <form action="/rounds" method="post">
     <input type="hidden" name="round[deck_id]" value="<%= @deck.id %>">
