@@ -28,6 +28,10 @@ form {
   color: white;
 }
 
+#deck_list {
+  text-align: left;
+}
+
 .page_headline{
   padding-bottom: 1em;
   text-align: center;
