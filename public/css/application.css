@@ -2,9 +2,13 @@ html{
   background-color: #7FC7AF;
 }
 
+
 .header_bar{
   background-color: black;
   color: white;
+  padding-top: 1em;
+  padding-left: 10px;
+  padding-right: 1em;
 }
 
 #header{
@@ -16,8 +20,14 @@ html{
   float: right;
 }
 
+#nav > a {
+  text-decoration: none;
+  color: white;
+}
+
 .page_headline{
   padding-bottom: 1em;
+  text-align: center;
 }
 
 .container {
