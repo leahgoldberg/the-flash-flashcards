@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_many :games
 
   validates_presence_of :first_name, :last_name, :email
-  validates_uniqueness_of :email
+  validates_uniqueness_of :email, :message => "is already taken"
   validates_format_of :email, with: /\S+@[a-z0-9]+\S+.{1}[a-z]{2,3}/i
 
   def password
