@@ -5,7 +5,6 @@ class Round < ActiveRecord::Base
   has_many :cards, through: :deck
 
   def new_card
-    binding.pry
     available_cards.sample
   end
 
