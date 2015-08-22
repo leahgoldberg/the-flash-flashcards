@@ -1,13 +1,43 @@
 h1 {
+  /*text-align: center;*/
+}
+.title {
   text-align: center;
+  font-family: 'Quicksand',sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 24pt;
+  color: #FFCC00;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 .deck {
+  width: 150px;
+  height: 120px;
   display: inline-block;
-  margin: 20px;
-  width: 100px;
+  margin: 20px 0px 20px 50px;
   padding: 0px 20px 20px 20px;
-  border: 1px solid black;
-  border-radius: 5px;
+  border: 3px solid black;
+  border-radius: 20px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+  font-family: 'Quicksand',sans-serif;
+  font-weight: 700;
+}
+.deck div {
+  margin-top: 55px;
+}
+.deck:hover {
+  text-decoration: none;
+  background-color: #FFCC00;
 }
 .card, .input_form {
   display: block;
@@ -35,25 +65,21 @@ a:hover {
   z-index: 1;
   top: 0;
 }
-
 #logo {
   margin-left: 50px;
   margin-top: 20px;
   float: left;
 }
-
 #logo img{
   margin-top: -10px;
   float: left;
 }
-
 #logo h1 {
   float: right;
   color: white;
   margin-top: -3px;
   margin-left: 5px;
 }
-
 #logo h1 a {
   font-family: 'Codystar', sans-serif;
   font-weight: 400;
@@ -65,12 +91,10 @@ a:hover {
   list-style: none;
   margin-top: 20px;
 }
-
 .header li {
   display: inline-block;
   padding: 5px;
 }
-
 .header a {
   font-family: 'Quicksand',sans-serif;
   font-weight: 300;
@@ -78,15 +102,22 @@ a:hover {
   color: white;
   text-decoration: none;
 }
-
 .header a:hover {
   font-weight: 400;
 }
-
 .content {
   margin-top: 150px;
 }
-
+.footer {
+  border-top: 3px solid #cc0000;
+  height: 50px;
+  background-color: #e50000;
+  box-shadow: -5px -5px 5px #d4d4d4;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+}
 
 
 
