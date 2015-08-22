@@ -1,41 +1,43 @@
-post '/user' do
+post '/users' do
   user = User.new(params[:user])
   if user.save # why doesn't this work as ternary?
     session[:user_id] = user.id
-    redirect '/user/profile'
+    redirect "/users/#{user.id}/profile"
   else
     flash[:errors] = user.errors.full_messages
-    redirect '/user/new'
+    redirect '/users/new'
   end
 end
 
-get '/user/new' do
+get '/users/new' do
   erb :'user/new'
 end
 
-post '/user/login' do
+post '/users/login' do
   user = User.find_by(email: params[:user][:email])
   if user.password == params[:user][:password]
     session[:user_id] = user.id
     redirect '/'
   else
-    redirect '/user/login'
+    flash[:errors] = user.errors.full_messages
+    redirect '/users/login'
   end
 end
 
-get '/user/login' do
+get '/users/login' do
   erb :'user/login'
 end
 
-get '/user/profile' do
+get '/users/:id/profile' do
+  user = current_user
   if logged_in?
     erb :'user/profile'
   else
-    redirect '/user/login'
+    redirect '/users/login'
   end
 end
 
-get '/user/logout' do
+get '/users/logout' do
   session.clear
   redirect '/'
 end
