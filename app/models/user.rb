@@ -4,6 +4,10 @@ class User < ActiveRecord::Base
   has_many :rounds, foreign_key: :player_id
   has_many :guesses, through: :rounds
 
+  validates :username, presence: true, uniqueness: true
+  validates :email, presence: true
+  validates :password_hash, presence: true
+
 
   def password
     @password ||= Password.new(password_hash)
