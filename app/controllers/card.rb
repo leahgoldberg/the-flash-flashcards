@@ -16,7 +16,7 @@ post '/games/:game_id/cards/:id' do
   @next_card = Card.find_by(id: @card.id+1)
   if @game && @card
     @deck = @game.deck
-    if @card.answer == params[:card][:answer]
+    if @card.answer.downcase == params[:card][:answer].downcase
       redirect "/games/#{@game.id}/cards/#{@next_card.id}" unless @next_card==nil
       #redirect to profile
       redirect "/"
