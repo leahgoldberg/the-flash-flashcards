@@ -1,14 +1,13 @@
-<!-- needs to be passed a @deck object & a @card object @round object
-add navigational links -->
+<!-- needs to be passed a @deck object & a @card object @round object -->
 
 <h1><% @deck.name %></h1>
 
-<div class="center-box">
+<div class="card">
   <% @card.question %>
 </div>
 
 <% if @round.guesses == 3 %>
-  <div class="center-box">
+  <div class="card">
     <% @card.answer %>
   </div>
 <% end %>
