@@ -18,7 +18,7 @@ put "/users/signin" do
     session[:user_id] = user.id
     redirect "/"
   else
-    "Sad"
+    "Either your username of email was incorrect.  Go back and try again."
   end
 end
 
