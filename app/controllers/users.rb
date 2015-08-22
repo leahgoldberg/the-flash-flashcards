@@ -1,8 +1,3 @@
-get "/users/:id" do
-  @user = User.find_by(id: params[:id])
-  erb :'users/show'
-end
-
 get "/users/signin" do
   erb :"users/signin"
 end
@@ -12,9 +7,13 @@ get "/users/signout" do
   redirect "/"
 end
 
-
 get "/users/new" do
   erb :"/users/new"
+end
+
+get "/users/:id" do
+  @user = User.find_by(id: params[:id])
+  erb :'users/show'
 end
 
 put "/users/signin" do
