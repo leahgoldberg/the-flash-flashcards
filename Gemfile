@@ -7,6 +7,9 @@ gem 'pg'
 gem 'sinatra'
 gem 'sinatra-contrib'
 
+gem 'sinatra-flash'
+gem 'sinatra-redirect-with-flash'
+
 gem 'activesupport', '~>4.2.0'
 gem 'activerecord', '~>4.2.0'
 
@@ -14,6 +17,9 @@ gem 'rake'
 
 gem 'shotgun'
 gem 'bcrypt'
+
+
+
 
 group :test do
   gem 'shoulda-matchers'
