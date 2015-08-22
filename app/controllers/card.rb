@@ -27,11 +27,17 @@ post '/games/:game_id/cards/:card_id/rounds/:id' do
   if @game && @card && @round
     @next_card = Card.find_by(id: @card.id+1)
     if @card.answer.downcase == params[:card][:answer].downcase
-      redirect "/games/#{@game.id}/cards/#{@card.id}/rounds/#{@round_num}" if @guess_num==3
+      @game.rounds << Round.new(game:@game)
       redirect "/games/#{@game.id}/cards/#{@next_card.id}/rounds/#{@round_num+1}"
     else
-      flash[:message] = "Wrong answer! You have #{2-@guess_num} guesses left."
+      if @guess_num==3
+        flash[:message] = "The right answer was #{@card.answer}"
+        @game.rounds << Round.new(game:@game)
+        redirect "/games/#{@game.id}/cards/#{@next_card.id}/rounds/#{@round_num+1}"
+      else
+      flash[:message] = "Wrong answer! You have #{3-@guess_num} guesses left.#{@game.id} #{@round.id} #{@guess_num}"
       redirect "/games/#{@game.id}/cards/#{@card.id}/rounds/#{@round_num}"
+      end
     end
   else
     flash[:errors] = @game.errors.full_messages + @card.errors.full_messages
