@@ -1,8 +1,9 @@
-<div class = "page_headline">
-  Hello <%= current_user.username %>
-</div>
-
 <div class = "container">
+
+  <div class = "page_headline">
+    Hello <%= current_user.username %>! You should choose a deck...
+  </div>
+
   <% @decks.each do |deck| %>
   <li><a href = "decks/<%= deck.id %>"><%= deck.name %></a></li>
   <% end %>
