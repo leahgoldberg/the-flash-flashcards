@@ -1,4 +1,12 @@
+html{
+  padding: 10px
+}
+
+#header{
+  display: inline-block;
+  padding-bottom: 1em;
+}
+
 #nav {
   float: right;
-  padding-right: 10px
 }
