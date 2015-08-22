@@ -1,0 +1,5 @@
+<div><%= @card.question %></div>
+<form action="/guess" method="post">
+  <div><textarea name="card[answer]" placeholder="Answer"/></textarea></div>
+  <div><input type="submit" value="Submit"></div>
+</form>
