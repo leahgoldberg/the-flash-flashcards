@@ -1,5 +1,4 @@
 post '/rounds' do
-  # binding.pry
   @round = Round.new(params[:round])
   @round.player = current_user
   if @round.save
@@ -7,4 +6,10 @@ post '/rounds' do
   else
     redirect "/"
   end
+end
+
+get "/round/:id" do
+  round = Round.find_by(id: params[:id])
+  card = round.new_card
+  redirect "/round/#{@round.id}/card/#{card.id}"
 end
