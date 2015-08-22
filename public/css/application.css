@@ -1,5 +1,10 @@
 html{
-  padding: 10px
+  background-color: #7FC7AF;
+}
+
+.header_bar{
+  background-color: black;
+  color: white;
 }
 
 #header{
@@ -9,4 +14,18 @@ html{
 
 #nav {
   float: right;
+}
+
+.page_headline{
+  padding-bottom: 1em;
+}
+
+.container {
+  background-color: white;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 2em;
+  padding: 2em;
+  border-style: solid;
+  border-width: 5px;
 }
