@@ -1,4 +1,9 @@
 <div>
+  <% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+   <%= error %>
+  <% end %>
+  <%end%>
   <h1>New User Registration</h1>
   <form action="/user" method="POST">
       <label for="first_name">First Name</label>

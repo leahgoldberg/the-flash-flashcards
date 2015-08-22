@@ -4,12 +4,13 @@ post '/user' do
     session[:user_id] = user.id
     redirect '/user/profile'
   else
-    redirect '/user/registration'
+    flash[:errors] = user.errors.full_messages
+    redirect '/user/new'
   end
 end
 
-get '/user/registration' do
-  erb :'user/registration'
+get '/user/new' do
+  erb :'user/new'
 end
 
 post '/user/login' do
@@ -34,7 +35,7 @@ get '/user/profile' do
   end
 end
 
-post '/user/logout' do
+get '/user/logout' do
   session.clear
   redirect '/'
 end
