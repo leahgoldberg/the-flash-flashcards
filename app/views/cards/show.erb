@@ -13,6 +13,6 @@
 <% end %>
 
 <div class="input-form">
-  <% erb :'/_form.erb' %>
+  <% erb :'/_form.erb', locals: {deck: @deck, card: @card} %>
 </div>
 

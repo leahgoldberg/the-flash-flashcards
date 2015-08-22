@@ -1,6 +1,6 @@
-<form action="" method="POST">
+<form action="/decks/<%=deck.id%>/cards/<%=card.id%>" method="POST">
   <label for="answer">Answer</label>
-  <p><input id="answer" type="string" name="card[answer]" /></p>
+  <p><input id="answer" type="text" name="card[answer]" /></p>
 
   <p><input type="submit" value="Guess"/></p>
 </form>
