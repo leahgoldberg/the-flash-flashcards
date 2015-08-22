@@ -1,6 +1,6 @@
-<h1>Hello <%= current_user.username %>! </h1>
-
-<h2><a href="/users/signout">Sign Out </a></h2>
+<div class = "page_headline">
+  Hello <%= current_user.username %>
+</div>
 
 <div class = "container">
   <% @decks.each do |deck| %>
