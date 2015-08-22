@@ -1,6 +1,12 @@
 <div class = "container">
   <h1><%= @deck.name %></h1>
-  <% @cards.each do |card| %>
-  <li><%= card.question %>: <%= card.answer %></li>
-  <% end %>
+  <ul>
+    <% @cards.each do |card| %>
+    <li><%= card.question %>: <%= card.answer %></li>
+    <% end %>
+  </ul>
+
+  <form action="/rounds" method="post">
+    <br><input type="submit" value="Play"></br>
+  </form>
 </div>
