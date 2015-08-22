@@ -11,5 +11,5 @@ end
 get "/round/:id" do
   round = Round.find_by(id: params[:id])
   card = round.new_card
-  redirect "/round/#{@round.id}/card/#{card.id}"
+  redirect "/round/#{round.id}/card/#{card.id}"
 end
