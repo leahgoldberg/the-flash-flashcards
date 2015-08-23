@@ -24,7 +24,8 @@ end
 
 get '/rounds/:id/done' do
 	@round = Round.find_by(id: params[:id])
-	if @round
+  if @round
+    @deck = @round.deck
 		erb :'rounds/done'
 	else
 		status 404
