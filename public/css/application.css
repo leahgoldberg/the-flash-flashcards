@@ -240,6 +240,17 @@ input[type="submit"] {
   text-align: center;
 }
 
+.error-message {
+  margin-top: -5px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 14pt;
+  font-weight: 400;
+}
+
+.errors p{
+  color: red;
+}
+
 .answer-correct {
   color: #00FF00;
 }
