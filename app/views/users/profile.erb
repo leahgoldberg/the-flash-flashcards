@@ -12,10 +12,14 @@
   <div class="profile-container">
       <h2 class="profile-title"><a href="/users/decks">My Decks</a></h2>
       <ul>
-      <% Deck.find_author(current_user.id).each do |deck| %>
-        <li>
-          <%=deck.name%>
-        </li>
+      <% if Deck.find_author(current_user.id).empty? %>
+        <li>You haven't created any decks yet. Click <a href="/decks/new">here</a> to create your first one!</li>
+      <% else %>
+        <% Deck.find_author(current_user.id).each do |deck| %>
+          <li>
+            <%=deck.name%>
+          </li>
+        <% end %>
       <% end %>
     </ul>
   </div>
@@ -23,7 +27,7 @@
   <div class="profile-container">
     <h2 class="profile-title">My Statistics</h2>
     <table>
-      <tr>
+      <tr class="stats-header">
         <td>Date Played</td>
         <td>Name of Deck</td>
         <td>Cards in Deck</td>
@@ -32,7 +36,7 @@
       </tr>
       <% current_user.rounds.each do |round| %>
         <% if round.completed %>
-        <tr>
+        <tr class="stats-row">
           <td><%=round.created_at.strftime("%d %B %Y")%></td>
           <td><%=round.deck.name%></td>
           <td><%=round.deck.cards.count%></td>
