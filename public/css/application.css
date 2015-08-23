@@ -45,13 +45,47 @@
   text-decoration: none;
   background-color: #FFCC00;
 }
-.card, .input_form {
-  display: block;
+
+ .input_form {
+  /*display: block;*/
   border: 1px solid black;
   border-radius: 5px;
   width: 100px;
   margin: 20px auto;
 }
+
+.answer{
+text-align: center;
+padding-top:75px;
+font-size:20px;
+}
+
+
+
+.deck_name{
+margin-top: 175px;
+text-align: center;
+font-family: 'Quicksand',sans-serif;
+
+}
+
+.card {
+width: 500px;
+height: 200px;
+margin:auto;
+border: 3px solid black;
+border-radius: 20px;
+font-size: 18px;
+font-family: 'Quicksand',sans-serif;
+text-align: center;
+margin-top:75px;
+ }
+
+ .card_question {
+  margin-top:80px;
+ }
+
+
 th {
   text-align: left;
 }
