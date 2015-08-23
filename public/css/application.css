@@ -219,10 +219,12 @@ a:hover {
 
 #play-deck {
   padding-right: 20px;
+  vertical-align: middle;
 }
 
 #create-deck {
   padding-left: 20px;
+  vertical-align: middle;
 }
 
 input[type="submit"] {
@@ -262,6 +264,11 @@ input[type="submit"] {
 .done-page {
   padding-top: 35px;
   padding-bottom: 35px;
+}
+
+.or-bars {
+  font-size: 28pt;
+  vertical-align: middle;
 }
 
 
