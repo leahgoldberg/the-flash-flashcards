@@ -271,6 +271,11 @@ input[type="submit"] {
   vertical-align: middle;
 }
 
+.error-pic img{
+  display: block;
+  margin: 0 auto;
+}
+
 
 
 
