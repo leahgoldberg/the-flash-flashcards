@@ -17,6 +17,7 @@ get '/games/:id/rounds/new' do
     redirect "games/#{@game.id}/done" if end_of_deck?(@deck)
     break if @card.used != true
   end
+  @card.used = true
   @round.cards << @card
   @game.rounds << @round
   # something in the *model* needs to know if a card has been 'used' in a round
@@ -48,7 +49,6 @@ post '/games/:id/guesses/new' do
   @card = @round.cards.last
   puts @card.answer
   if correct?(@card,params)
-    @card.used = true
     redirect "/games/#{@game.id}/rounds/new"
   else
     redirect "/games/#{@game.id}/guesses/new"
