@@ -1,10 +1,10 @@
-<div>
+  <h1 class="title">New User Registration</h1>
+<div class="container">
   <% if flash[:errors] %>
   <% flash[:errors].each do |error| %>
    <%= error %>
   <% end %>
   <%end%>
-  <h1>New User Registration</h1>
   <form action="/users" method="POST">
       <label for="first_name">First Name</label>
       <p><input id="first_name" type="text" name="user[first_name]" /></p>
