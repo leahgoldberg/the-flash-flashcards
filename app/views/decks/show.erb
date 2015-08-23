@@ -1,6 +1,6 @@
 <div class = "container">
   <h1><%= @deck.name %></h1>
-  <h4>Created by <%= @creator.username %> on <%= @deck.created_at.year %>-<%= @deck.created_at.month %>-<%= @deck.created_at.day %></h4>
+  <h4>Created by <%= @creator.username %> on <%= convert_date_format(@deck.created_at) %></h4>
   <div id = "deck_list">
     <ul>
       <% @cards.each do |card| %>
