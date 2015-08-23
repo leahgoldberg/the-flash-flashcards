@@ -13,3 +13,11 @@ get "/round/:id/new" do
   card = round.new_card
   redirect "/round/#{round.id}/card/#{card.id}"
 end
+
+get "/round/:id" do
+  @round = Round.find_by(id: params[:id])
+  @player = @round.player
+  @deck = @round.deck
+  @guesses = @round.guesses
+  erb :"/rounds/show"
+end
