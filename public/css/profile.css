@@ -10,6 +10,7 @@
   margin-top: 10px;
   font-size:20px;
   color: black;
+  margin-left: -5px ;
 }
 
 .profile-container{
@@ -26,8 +27,39 @@
   font-family: 'Quicksand', sans-serif;
 }
 
+.profile-container a {
+  color: black;
+}
+
+.profile-container li {
+  color: black;
+  list-style: none;
+  margin-left: -5px;
+}
+
+.profile-container li a {
+  font-weight: 400;
+}
+
 .profile-container table {
-  margin: 30px;
+  margin: 20px 30px 20px 30px;
+}
+
+.stats-header td {
+  font-family: "Quicksand", sans-serif;
+  font-size: 12pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 20px;
+}
+
+.stats-row td {
+  font-family: "Quicksand", sans-serif;
+  font-size: 12pt;
+  padding-right: 20px;
+  padding-bottom: 5px;
 }
 
 
