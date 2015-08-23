@@ -8,23 +8,10 @@
       <li>Email: <%= current_user.email %></li>
     </ul>
   </div>
+
   <div class="spacer"></div>
-  <div class="profile-container">
-      <h2 class="profile-title"><a href="/users/decks">My Decks</a></h2>
-      <ul>
-      <% if Deck.find_author(current_user.id).empty? %>
-        <li>You haven't created any decks yet. Click <a href="/decks/new">here</a> to create your first one!</li>
-      <% else %>
-        <% Deck.find_author(current_user.id).each do |deck| %>
-          <li>
-            <%=deck.name%>
-          </li>
-        <% end %>
-      <% end %>
-    </ul>
-  </div>
-  <div class="spacer"></div>
-  <div class="profile-container">
+
+   <div class="profile-container">
     <h2 class="profile-title">My Statistics</h2>
     <table>
       <tr class="stats-header">
@@ -47,4 +34,18 @@
       <% end %>
     </table>
   </div>
+
+  <div class="spacer"></div>
+
+  <div class="profile-container">
+      <h2 class="profile-title"><a href="/users/decks">My Decks</a></h2>
+      <ul>
+      <% if Deck.find_author(current_user.id).empty? %>
+        <li>You haven't created any decks yet. Click <a href="/decks/new">here</a> to create your first one!</li>
+      <% else %>
+        <%= erb :'users/decks', locals: {decks: @decks}%>
+      <% end %>
+    </ul>
+  </div>
+
 </div>
