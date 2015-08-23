@@ -1,13 +1,19 @@
-<div class = "container">
+<div class = "round_container">
   <h1><%= @deck.name %></h1>
   <h4>Created by <%= @creator.username %> on <%= convert_date_format(@deck.created_at) %></h4>
-  <div id = "deck_list">
-    <ul>
-      <% @cards.each do |card| %>
-      <li><%= card.question %>: <%= card.answer %></li>
-      <% end %>
-    </ul>
-  </div>
+
+  <table>
+    <tr>
+      <th> Question </th>
+      <th> Answer </th>
+    </tr>
+    <% @cards.each do |card| %>
+    <tr>
+      <td><%= card.question %></td>
+      <td><%= card.answer %></td>
+    </tr>
+    <% end %>
+  </table>
 
   <form action="/rounds" method="post">
     <input type="hidden" name="round[deck_id]" value="<%= @deck.id %>">

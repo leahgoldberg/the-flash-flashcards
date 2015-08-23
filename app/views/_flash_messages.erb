@@ -4,3 +4,11 @@
 <% if flash[:incorrect] %>
   <div class="container"><%= flash[:incorrect] %></div>
 <% end %>
+<% if flash[:sign_in_error] %>
+  <div class="container"><%= flash[:sign_in_error] %></div>
+<% end %>
+<% if flash[:sign_up_error] %>
+  <% flash[:sign_up_error].each do |err| %>
+    <div class="container"><%= err %></div>
+  <% end %>
+<% end %>
