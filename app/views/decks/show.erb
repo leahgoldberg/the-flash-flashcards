@@ -13,4 +13,11 @@
     <input type="hidden" name="round[deck_id]" value="<%= @deck.id %>">
     <br><input type="submit" value="Play"></br>
   </form>
+
+  <% if session[:user_id] == @deck.creator_id%>
+    <form action="/decks/<%= @deck.id%>" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <br><input type="submit" value="Delete"></br>
+    </form>
+  <%end%>
 </div>

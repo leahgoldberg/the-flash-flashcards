@@ -23,6 +23,10 @@ post '/decks' do
   else
     redirect '/'
   end
-
 end
 
+delete '/decks/:id' do
+  @deck = Deck.find_by(id: params[:id])
+  @deck.destroy
+  redirect '/decks'
+end
