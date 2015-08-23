@@ -5,10 +5,16 @@ post '/guess' do
   if card.answer == params[:answer]
     guess.correct = "true"
     guess.save!
+    if round.new_card.nil?
+      redirect "/round/#{round.id}"
+    end
     redirect "/round/#{round.id}/card/#{round.new_card.id}"
   else
     guess.correct = "false"
     guess.save!
+    if round.new_card.nil?
+      redirect "/round/#{round.id}"
+    end
     redirect "/round/#{round.id}/card/#{round.new_card.id}"
   end
 end
