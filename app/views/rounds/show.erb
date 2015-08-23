@@ -1,5 +1,6 @@
 <div class ="container">
     <div><%= @player.username %>'s stats</div>
     <div><%= @deck.name %></div>
+    <div>You answered <%= @first_guesses %>/<%= @deck.cards.length %> cards correctly on the first try</div>
     <div>You made <%= @guesses.length %> total guesses</div>
 </div>
