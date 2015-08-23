@@ -1,10 +1,7 @@
-<!-- needs to be passed a @decks object
-specify link to individual decks -->
-
 <h1 class="title">Playable Decks</h1>
 
 <% @decks.each do |deck| %>
-  <a class="deck" href="/decks/<%=deck.id%>/games/new"><div ><%= deck.name %></div></a>
+  <a class="deck" href="/decks/<%=deck.id%>/rounds/new"><div ><%= deck.name %></div></a>
 <% end %>
 
 
