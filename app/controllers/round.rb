@@ -9,3 +9,13 @@ get '/decks/:id/rounds/new' do
     erb :"errors/not_found"
   end
 end
+
+get 'rounds/:id/done' do 
+	@round = Round.find_by(id: params[:id])
+	if @round
+		erb :'rounds/done'
+	else
+		status 404
+		erb :'errors/not_found'
+	end	
+end	
