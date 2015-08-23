@@ -82,7 +82,8 @@ margin-top:75px;
  }
 
  .card_question {
-  margin-top:80px;
+padding: 20px;
+  margin-top:60px;
  }
 
 
@@ -152,6 +153,7 @@ a:hover {
 }
 .content {
   margin-top: 150px;
+  margin-bottom: 150px;
 }
 .footer {
   border-top: 3px solid #cc0000;
@@ -213,6 +215,14 @@ a:hover {
 
 .spacer{
   margin:50px;
+}
+
+#play-deck {
+  padding-right: 20px;
+}
+
+#create-deck {
+  padding-left: 20px;
 }
 
 
