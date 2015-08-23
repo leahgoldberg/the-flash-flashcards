@@ -1,8 +1,18 @@
 <div>
-  <h1>User Profile</h1>
-  <h1>user.first_name</h1>
-  <h1>user.last_name</h1>
-
-  <h2>Stats go here </h2>
-
+  <h1 class="title">User Profile</h1>
+  <div class="container">
+  <div class="left-container">
+    <ul class="profile">
+      <li>First Name: <%= current_user.first_name %></li>
+      <li>Last Name: <%= current_user.last_name %></li>
+      <li>Email: <%= current_user.email %></li>
+    </ul>
+  </div>
+  <div class="spacer"></div>
+  <div class="right-container">
+    <ul class="stats">
+    <li>Stats go here</li>
+    </ul>
+  </div>
+</div>
 </div>
