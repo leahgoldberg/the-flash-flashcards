@@ -1,7 +1,3 @@
 get "/" do
-  if logged_in?		
-    redirect "/decks"  
-  else
-    erb :index
-  end  
+  erb :index
 end

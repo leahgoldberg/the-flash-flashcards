@@ -9,10 +9,10 @@ class Deck < ActiveRecord::Base
   end
 
   def reset_cards!
-    self.cards.map! {|card| card.correct=false}
+    self.cards.each {|card| card.correct=false}
   end
 
   def all_cards_correct?
     self.cards.all? {|card| card.correct}
-  end  
+  end
 end

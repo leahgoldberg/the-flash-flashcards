@@ -5,8 +5,8 @@ end
 
 get '/decks/:id/rounds/new' do
   @deck = Deck.find_by(id: params[:id])
-  @game = Game.new(deck: @deck, user: current_user)
-  if @deck && @game.save
+  @round = Round.new(deck: @deck, user: current_user)
+  if @deck && @round.save
     @deck.reset_cards!
     redirect "rounds/#{@round.id}/cards/#{@card.id}"
   else
