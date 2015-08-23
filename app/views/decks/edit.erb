@@ -1,0 +1,6 @@
+<div class="container">
+  <h1 class="title">New Deck</h1>
+  <form action="/decks" method="POST">
+    <%= erb :"decks/_form", locals: { deck: @deck } %>
+  </form>
+</div>
