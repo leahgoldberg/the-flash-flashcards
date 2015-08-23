@@ -3,7 +3,7 @@ class Card < ActiveRecord::Base
 
   validates_presence_of :question, :answer
 
-  def correct?(user_input)
+  def user_correct?(user_input)
   	self.answer.downcase == user_input.downcase
-  end	
+  end
 end

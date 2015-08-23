@@ -9,7 +9,7 @@ class Deck < ActiveRecord::Base
   end
 
   def reset_cards!
-    self.cards.each {|card| card.correct=false}
+    self.cards.each {|card| card.update_attribute(:correct,false)}
   end
 
   def all_cards_correct?

@@ -1,19 +1,19 @@
 post '/round/:round_id/cards/:id/guesses' do
-	@round = Round.find_by(params[:round_id])
+	@round = Round.find_by(id: params[:round_id])
 	@deck = @round.deck
-	@card = Card.find_by(params[:id])
+	@card = Card.find_by(id: params[:id])
 	@guess = Guess.create(round: @round)
 	@round.guesses << @guess
 	if @card.user_correct?(params[:card][:answer])
-		@card.correct = true
+		@card.update_attribute(:correct, true)
 		if @deck.all_cards_correct?
 			redirect "/rounds/#{@round.id}/done"
-		else	
+		else
 			flash[:message] = "Correct! Next question below"
-			redirect "/round/#{@round.id}/cards/next"
-		end	
+			redirect "/rounds/#{@round.id}/next"
+		end
 	else
-		flash[:message] = "Wrong answer."
-		redirect "/round/#{@round.id}/cards/next"	
-	end	
+		flash[:wrong] = "Wrong answer."
+		redirect "/rounds/#{@round.id}/next"
+	end
 end
