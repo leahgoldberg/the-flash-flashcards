@@ -3,3 +3,7 @@ get "/round/:round_id/card/:id" do
   @round = Round.find_by(id: params[:round_id])
   erb :"cards/show"
 end
+
+get '/decks/:id/cards/new' do
+  params[:id]
+end
