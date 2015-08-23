@@ -1,8 +1,8 @@
-<h1><%= @deck.name %></h1>
+<h1 class ="deck_name"><%= @deck.name %></h1>
 
 
 <div class="card">
-  <%= @card.question %>
+  <p class="card_question"><%= @card.question %></p>
 </div>
 
 <% if flash[:message] %>
@@ -13,6 +13,8 @@
 <% end %>
 
 <div class="input-form">
+  <div class="answer">
   <%= erb :'cards/_form', locals: {round: @round, card: @card} %>
+</div>
 </div>
 
