@@ -1,0 +1,33 @@
+#my-decks {
+  margin-top: 20px;
+}
+
+.profile, .stats {
+  list-style: none;
+}
+
+.profile li, .stats li {
+  margin-top: 10px;
+  font-size:20px;
+  color: black;
+}
+
+.profile-container{
+  display:block;
+  border: 1px dashed black;
+  border-radius: 20px;
+  width:75%;
+  margin:0 auto;
+  padding:10px 20px 10px 20px;
+}
+
+.profile-container h2 {
+  margin-left: 30px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.profile-container table {
+  margin: 30px;
+}
+
+
