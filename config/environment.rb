@@ -19,8 +19,8 @@ require 'bcrypt'
 require 'sinatra'
 require "sinatra/reloader" if development?
 
-# require "sinatra/flash"
-# require "sinatra/redirect_with_flash"
+require "sinatra/flash"
+require "sinatra/redirect_with_flash"
 
 require 'erb'
 
