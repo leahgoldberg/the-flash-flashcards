@@ -9,3 +9,21 @@ get '/rounds/:round_id/cards/:id' do
 		erb :'errors/not_found'
 	end
 end
+
+get '/decks/:id/cards/new' do
+  @deck = Deck.find_by(id:params[:id])
+  @card = Card.new
+  erb :'/cards/new'
+end
+
+post '/decks/:id/cards' do
+  @deck = Deck.find_by(id:params[:id])
+  @card = Card.new(params[:card])
+  @deck.cards << @card
+  if @card.save
+    redirect "/decks/#{@deck.id}/cards/new"
+  else
+    flash[:errors] = @deck.errors.full_messages
+    redirect "/decks/#{@deck.id}/cards/new"
+  end
+end
