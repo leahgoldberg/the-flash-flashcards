@@ -4,6 +4,7 @@ post '/round/:round_id/cards/:id/guesses' do
 	@card = Card.find_by(id: params[:id])
 	@guess = Guess.create(round: @round)
 	@round.guesses << @guess
+	@card.guesses << @guess
 	if @card.user_correct?(params[:card][:answer])
 		@card.update_attribute(:correct, true)
 		if @deck.all_cards_correct?

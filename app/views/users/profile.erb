@@ -27,7 +27,7 @@
           <td><%=round.created_at.strftime("%d %B %Y")%></td>
           <td><%=round.deck.name%></td>
           <td><%=round.deck.cards.count%></td>
-          <td></td>
+          <td><%=round.first_guess_correct%></td>
           <td><%=round.total_guesses%></td>
         </tr>
         <% end %>
