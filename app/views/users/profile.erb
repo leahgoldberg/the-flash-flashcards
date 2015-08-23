@@ -14,7 +14,7 @@
 
    <div class="profile-container">
     <h2 class="profile-title">My Statistics</h2>
-    <% if current_user.rounds.count > 1 %>
+    <% if current_user.has_stats? %>
       <table>
         <tr class="stats-header">
           <td>Date Played</td>
