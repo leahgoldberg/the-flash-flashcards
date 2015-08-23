@@ -7,6 +7,8 @@ decks_5 = Deck.create(name: "Sports")
 decks_6 = Deck.create(name: "Pop Cultural")
 decks_7 = Deck.create(name: "Art")
 decks_8 = Deck.create(name: "Literature")
+decks_9 = Deck.create(name: "Science")
+decks_10 = Deck.create(name: "Food")
 
 
 
@@ -71,6 +73,22 @@ card_38 = Card.create({question: "Who wrote The Great Gatsby?(Last name only)", 
 card_39 = Card.create({question: "Who wrote the Hardy Boys series?", answer: "Edward Stratemeyer"}),
 card_40 = Card.create({question: "Who wrote the Harry Potter series?(Last name only?)", answer: "Rowling"})]
 
+science_cards = [
+card_41 = Card.create({question: "What is H20?", answer: "Water"}),
+card_42 = Card.create({question: "What is the hardest element?", answer: "Carbon"}),
+card_43 = Card.create({question: "What is the middle of the earth called?", answer: "Core"}),
+card_44 = Card.create({question: "What is an educated guess called?", answer: "Hypothesis"}),
+card_45 = Card.create({question: "What species are humans?", answer: "Homo-sapiens"})]
+
+food_cards = [
+card_46 = Card.create({question: "What country was pizza first created?", answer: "Italy"}),
+card_47 = Card.create({question: "Where is the Halal truck right now?", answer: "On the corner"}),
+card_48 = Card.create({question: "What is Navraj's favorite food?", answer: "Chinese"}),
+card_49 = Card.create({question: "What is the best fruit in the world?", answer: "Watermelon"}),
+card_50 = Card.create({question: "What is better then lamb?", answer: "lambchops"})]
+
+
+
 
 
 
@@ -108,7 +126,13 @@ book_cards.each do |card|
   decks_8.cards << card
 end
 
+science_cards.each do |card|
+  decks_9.cards << card
+end
 
+food_cards.each do |card|
+  decks_10.cards << card
+end
 
 
 
