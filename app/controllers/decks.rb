@@ -15,3 +15,8 @@ get '/decks/:id' do
   erb :'/decks/show'
 end
 
+post '/decks' do
+  p params[:decklength]
+  p params[:deck][:name]
+end
+

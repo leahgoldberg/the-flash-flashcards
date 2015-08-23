@@ -1,1 +1,16 @@
-Here you will create a new deck
+<div class = "container">
+  <form action="/decks" method="post" id="newdeck">
+    <input type="text" name="deck[name]" placeholder="Type your title here"/>
+    <input type="submit" value="Create Deck" />
+  </form>
+
+
+How many cards will be in your deck?
+<select name="decklength" form="newdeck">
+  <option value="5">5</option>
+  <option value="10">10</option>
+  <option value="15">15</option>
+  <option value="20">20</option>
+</select>
+
+</div>
