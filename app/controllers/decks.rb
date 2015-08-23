@@ -5,6 +5,7 @@ get '/decks' do
 end
 
 get '/decks/new' do
+  require_signin
   erb :'/decks/new'
 end
 
