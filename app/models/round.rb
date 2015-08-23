@@ -3,11 +3,15 @@ class Round < ActiveRecord::Base
   belongs_to :deck
   has_many :guesses
 
-  # def self.first_guess_correct
-  #   self.guesses.count > self.deck.cards.count ?
-  # end
+  def first_guess_correct
+    self.deck.cards.select {|card| card.guesses.count==1}.count
+  end
 
   def total_guesses
     self.guesses.count
+  end
+
+  def total_cards
+    self.deck.cards.count
   end
 end
