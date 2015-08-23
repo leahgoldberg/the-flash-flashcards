@@ -7,10 +7,9 @@
 
 <% if flash[:message] %>
   	<%= flash[:message] %>
-	<% if flash[:wrong]%>
+<% end %>
+<% if flash[:wrong]%>
     <%=flash[:wrong]%>
-		<%= @card.answer %>
-	<% end %>
 <% end %>
 
 <div class="input-form">

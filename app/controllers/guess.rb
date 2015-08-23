@@ -13,7 +13,7 @@ post '/round/:round_id/cards/:id/guesses' do
 			redirect "/rounds/#{@round.id}/next"
 		end
 	else
-		flash[:wrong] = "Wrong answer."
+		flash[:wrong] = "Wrong answer. The correct answer was #{@card.answer}"
 		redirect "/rounds/#{@round.id}/next"
 	end
 end
