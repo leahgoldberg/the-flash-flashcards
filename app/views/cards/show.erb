@@ -1,4 +1,6 @@
 <div class="container"><%= @card.question %>
+  <!-- <div id="progressSoFar"><%%></div> -->
+  <div id="progressbar" name='10' ></div>
   <div class="input">
     <form action="/guess" method="post">
       <input type="hidden" name="id" value="<%= @card.id %>">
