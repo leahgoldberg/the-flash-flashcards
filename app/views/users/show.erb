@@ -11,7 +11,7 @@
       <th>Total Guesses</th>
     </tr>
     <tr>
-      <td><%= round.created_at %></td>
+      <td><%= convert_date_format(round.created_at) %></td>
       <td><%= round.deck.cards.length %></td>
       <td><%= round.num_first_answer_correct %></td>
       <td><%= round.guesses.length %></td>
