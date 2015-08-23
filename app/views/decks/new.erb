@@ -1,16 +1,16 @@
-<div class = "container">
-  <form action="/decks" method="post" id="newdeck">
+<div class="container">
+  <form action="/decks" method="post">
     <input type="text" name="deck[name]" placeholder="Type your title here"/>
-    <input type="submit" value="Create Deck" />
+    <br><input type="text" name="card1[question]" placeholder="Question 1" />
+    <input type="text" name="card1[answer]" placeholder="Answer 1" />
+    <br><input type="text" name="card2[question]" placeholder="Question 2" />
+    <input type="text" name="card2[answer]" placeholder="Answer 2" />
+    <br><input type="text" name="card3[question]" placeholder="Question 3" />
+    <input type="text" name="card3[answer]" placeholder="Answer 3" />
+    <br><input type="text" name="card4[question]" placeholder="Question 4" />
+    <input type="text" name="card4[answer]" placeholder="Answer 4" />
+      <br><input type="text" name="card5[question]" placeholder="Question 5" />
+    <input type="text" name="card5[answer]" placeholder="Answer 5" />
+    <br><input type="submit" value="Create" />
   </form>
-
-
-How many cards will be in your deck?
-<select name="decklength" form="newdeck">
-  <option value="5">5</option>
-  <option value="10">10</option>
-  <option value="15">15</option>
-  <option value="20">20</option>
-</select>
-
 </div>
