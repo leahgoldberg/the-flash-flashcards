@@ -22,13 +22,13 @@ put '/decks/:id' do
   @cards.each_with_index do |card, i|
     card.question = params[:card]["#{i}"][:question]
     card.answer = params[:card]["#{i}"][:answer]
-    if !card.save
+    unless card.save
       flash[:errors] = card.errors.full_messages
       redirect "/users/decks/#{@deck.id}/edit"
     end
   end
   if @deck.save
-    redirect "/users/decks"
+    redirect "/users/#{current_user.id}/profile"
   else
     flash[:errors] = @deck.errors.full_messages
     redirect "/users/decks/#{@deck.id}/edit"
