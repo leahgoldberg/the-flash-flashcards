@@ -6,7 +6,7 @@ class Game < ActiveRecord::Base
   def stats
   end
 
-  def play
-
+  def play(current_card)
+    self.rounds << Round.new
   end
 end
