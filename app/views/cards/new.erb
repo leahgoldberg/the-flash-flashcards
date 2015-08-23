@@ -1,0 +1,19 @@
+<div class = "container">
+  <h1><%= @deck.name %></h1>
+  <h3> Type your question and answer here </h3>
+  <div id="deck_list">
+    <ol>
+      <% @deck.cards.each do |card| %>
+      <li><%= card.question %> : <%= card.answer %></li>
+      <% end %>
+    </ol>
+</div>
+
+  <form action="/decks/<%= @deck.id %>/cards" method="post">
+    <input type="text" name="card[question]" placeholder="Question" />
+    <input type="text" name="card[answer]" placeholder="Answer" />
+    <br><input type="submit" name="action" value="Add Card" />
+    <input type="submit" name="action" value="Finish Deck" />
+  </form>
+
+</div>

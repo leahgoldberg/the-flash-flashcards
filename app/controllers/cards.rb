@@ -5,5 +5,18 @@ get "/round/:round_id/card/:id" do
 end
 
 get '/decks/:id/cards/new' do
-  params[:id]
+  @deck = Deck.find_by(id: params[:id])
+  erb :'/cards/new'
+end
+
+post '/decks/:id/cards' do
+  if params[:action] == "Add Card"
+    @deck = Deck.find_by(id: params[:id])
+    @deck.cards.create(params[:card])
+    redirect "/decks/#{params[:id]}/cards/new"
+  else
+    @deck = Deck.find_by(id: params[:id])
+    @deck.cards.create(params[:card])
+    redirect '/decks'
+  end
 end
