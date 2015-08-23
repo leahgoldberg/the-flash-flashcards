@@ -225,6 +225,28 @@ a:hover {
   padding-left: 20px;
 }
 
+input[type="submit"] {
+  font-family: "Quicksand";
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.answer-correct, .answer-wrong {
+  margin-top: 15px;
+  margin-bottom: -5px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 14pt;
+  font-weight: 400;
+  text-align: center;
+}
+
+.answer-correct {
+  color: #00FF00;
+}
+
+.answer-wrong {
+  color: red;
+}
 
 
 
