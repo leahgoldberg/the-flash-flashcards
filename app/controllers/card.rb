@@ -11,9 +11,14 @@ get '/rounds/:round_id/cards/:id' do
 end
 
 get '/decks/:id/cards/new' do
-  @deck = Deck.find_by(id:params[:id])
-  @card = Card.new
-  erb :'/cards/new'
+  if logged_in?
+    @deck = Deck.find_by(id:params[:id])
+    @card = Card.new
+    erb :'/cards/new'
+  else
+    status 401
+    erb :'errors/unauthorized'
+  end
 end
 
 post '/decks/:id/cards' do

@@ -30,8 +30,8 @@ end
 
 get '/users/:id/profile' do
   @user = current_user
-  @decks = Deck.find_author(@user.id)
-  if logged_in?
+  if @user
+    @decks = Deck.find_author(@user.id)
     erb :'users/profile'
   else
     redirect '/users/login'

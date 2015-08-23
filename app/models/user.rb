@@ -22,4 +22,8 @@ class User < ActiveRecord::Base
       nil
     end
   end
+
+  def has_stats?
+    self.rounds.count > 0 && self.rounds.any? {|round| round.completed}
+  end
 end

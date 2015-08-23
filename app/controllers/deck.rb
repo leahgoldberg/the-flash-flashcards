@@ -1,6 +1,11 @@
 get '/decks/new' do
-  @deck = Deck.new
-  erb :'/decks/new'
+  if logged_in?
+    @deck = Deck.new
+    erb :'decks/new'
+  else
+    status 401
+    erb :'errors/unauthorized'
+  end
 end
 
 post '/decks' do
@@ -15,7 +20,6 @@ post '/decks' do
 end
 
 put '/decks/:id' do
-  p params.to_s
   @deck = Deck.find_by(id: params[:id])
   @deck.name = params[:deck][:name]
   @cards = @deck.cards
@@ -48,11 +52,16 @@ end
 
 get "/users/decks/:id/edit" do
   @deck = Deck.find_by(id: params[:id])
-  @cards = @deck.cards
-  if @deck.valid?
-    erb :'/decks/edit'
+  if @deck.author == current_user.id
+    @cards = @deck.cards
+    if @deck.valid?
+      erb :'/decks/edit'
+    else
+      flash[:errors] = @deck.errors.full_messages
+    end
   else
-    flash[:errors] = @deck.errors.full_messages
+    status 401
+    erb :'errors/unauthorized'
   end
 end
 

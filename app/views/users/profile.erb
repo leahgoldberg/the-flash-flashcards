@@ -11,28 +11,35 @@
 
   <div class="spacer"></div>
 
+
    <div class="profile-container">
     <h2 class="profile-title">My Statistics</h2>
-    <table>
-      <tr class="stats-header">
-        <td>Date Played</td>
-        <td>Name of Deck</td>
-        <td>Cards in Deck</td>
-        <td>First Guess Correct</td>
-        <td>Total Guesses</td>
-      </tr>
-      <% current_user.rounds.each do |round| %>
-        <% if round.completed %>
-        <tr class="stats-row">
-          <td><%=round.created_at.strftime("%d %B %Y")%></td>
-          <td><%=round.deck.name%></td>
-          <td><%=round.deck.cards.count%></td>
-          <td><%=round.first_guess_correct%></td>
-          <td><%=round.total_guesses%></td>
+    <% if current_user.has_stats? %>
+      <table>
+        <tr class="stats-header">
+          <td>Date Played</td>
+          <td>Name of Deck</td>
+          <td>Cards in Deck</td>
+          <td>First Guess Correct</td>
+          <td>Total Guesses</td>
         </tr>
+        <% current_user.rounds.each do |round| %>
+          <% if round.completed %>
+          <tr class="stats-row">
+            <td><%=round.created_at.strftime("%d %B %Y")%></td>
+            <td><%=round.deck.name%></td>
+            <td><%=round.deck.cards.count%></td>
+            <td><%=round.first_guess_correct%></td>
+            <td><%=round.total_guesses%></td>
+          </tr>
+          <% end %>
         <% end %>
-      <% end %>
-    </table>
+      </table>
+    <% else %>
+      <ul>
+        <li><a href="/decks">Play a game</a> to see some stats!</li>
+      </ul>
+    <% end %>
   </div>
 
   <div class="spacer"></div>

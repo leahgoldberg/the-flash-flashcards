@@ -3,6 +3,7 @@ get '/decks/:id/rounds/new' do
   @round = Round.new(deck: @deck, user: current_user)
   if @deck && @round.save
     @deck.reset_cards!
+    @deck.reset_guesses!
     redirect "rounds/#{@round.id}/next"
   else
     status 404
