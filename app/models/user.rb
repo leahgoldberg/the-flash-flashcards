@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   include BCrypt
-  has_many :games
+  has_many :rounds
 
   validates_presence_of :first_name, :last_name, :email
   validates_uniqueness_of :email, :message => "is already taken"
