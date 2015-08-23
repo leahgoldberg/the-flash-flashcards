@@ -1,12 +1,16 @@
-<!-- button to play another game with the same deck -->
-<a href="/decks/<%=@deck.id%>/rounds/new">Play Again?</a>
 
-<!-- stats for this game -->
-<p>STATS</p>
+<h1 class="title">Round Over!</h1>
 
-<p>You answered <%=@round.first_guess_correct%>/<%=@round.total_cards%> correctly on the first try. You submitted <%=@round.total_guesses%> total guesses before each card was answered correctly.</p>
+<div class="done-page">
+  <section class="container">
 
 
+  <p>You answered <%=@round.first_guess_correct%>/<%=@round.total_cards%> correctly on the first try.</p>
+  <p>You submitted <%=@round.total_guesses%> total guesses before each card was answered correctly.</p>
 
+
+  </section>
+</div>
+<h1 class="title"><a href="/decks/<%=@deck.id%>/rounds/new">Play Again?</a></h1>
 
 

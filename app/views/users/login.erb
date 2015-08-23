@@ -1,6 +1,11 @@
 <div>
   <h1 class="title">Log In</h1>
   <div class="container">
+    <div class="errors">
+    <% if flash[:wrong_login]%>
+      <p class="error-message"><%=flash[:wrong_login]%></p>
+    <% end %>
+  </div>
   <form action="/users/login" method="POST">
       <label for="email">Email</label>
       <p><input id="email" type="text" name="user[email]" /></p>

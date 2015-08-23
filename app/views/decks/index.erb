@@ -1,4 +1,4 @@
-<h1 class="title">Play A Deck  ||  <a href="/decks/new">Create New Deck</a></h1>
+<h1 class="title"><span id="play-deck">Play A Deck</span>  ||  <a href="/decks/new"><span id="create-deck">Create New Deck</span></a></h1>
 
 <% @decks.each do |deck| %>
   <a class="deck" href="/decks/<%=deck.id%>/rounds/new"><div ><%= deck.name %></div></a>

@@ -82,7 +82,8 @@ margin-top:75px;
  }
 
  .card_question {
-  margin-top:80px;
+padding: 20px;
+  margin-top:60px;
  }
 
 
@@ -152,6 +153,7 @@ a:hover {
 }
 .content {
   margin-top: 150px;
+  margin-bottom: 150px;
 }
 .footer {
   border-top: 3px solid #cc0000;
@@ -215,7 +217,52 @@ a:hover {
   margin:50px;
 }
 
+#play-deck {
+  padding-right: 20px;
+}
 
+#create-deck {
+  padding-left: 20px;
+}
+
+input[type="submit"] {
+  font-family: "Quicksand";
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.answer-correct, .answer-wrong {
+  margin-top: 15px;
+  margin-bottom: -5px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 14pt;
+  font-weight: 400;
+  text-align: center;
+}
+
+.error-message {
+  margin-top: -5px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 14pt;
+  font-weight: 400;
+}
+
+.errors p{
+  color: red;
+}
+
+.answer-correct {
+  color: #00FF00;
+}
+
+.answer-wrong {
+  color: red;
+}
+
+.done-page {
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
 
 
 

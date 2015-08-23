@@ -14,12 +14,12 @@ get '/users/new' do
 end
 
 post '/users/login' do
-  user = User.find_by(email: params[:user][:email])
-  if user.password == params[:user][:password]
+  user = User.authenticate(params[:user])
+  if user
     session[:user_id] = user.id
     redirect '/'
   else
-    flash[:errors] = user.errors.full_messages
+    flash[:wrong_login] = "Your email or password was incorrect"
     redirect '/users/login'
   end
 end
