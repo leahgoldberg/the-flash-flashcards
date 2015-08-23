@@ -19,5 +19,7 @@ get "/round/:id" do
   @player = @round.player
   @deck = @round.deck
   @guesses = @round.guesses
+  sql = "select count(*) from (select count(*) as cnt from guesses where round_id = #{@round.id} group by card_id having count(*) = 1) as counts;"
+  @first_guesses = ActiveRecord::Base.connection.execute(sql).getvalue(0,0)
   erb :"/rounds/show"
 end
