@@ -1,18 +1,18 @@
 class Deck < ActiveRecord::Base
-  has_many :games
+  has_many :rounds
   has_many :cards
 
   validates_presence_of :name
 
   def random_card
-    # non-destructive b/c shuffle returns a new array
-    self.cards.shuffle.pop
+    self.cards.select {|card| !card.correct}.sample
   end
 
   def reset_cards!
-    self.cards.each do |card|
-      card.used = false
-      card.save
-    end
+    self.cards.each {|card| card.update_attribute(:correct,false)}
+  end
+
+  def all_cards_correct?
+    self.cards.all? {|card| card.correct}
   end
 end

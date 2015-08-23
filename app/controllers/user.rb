@@ -1,6 +1,6 @@
 post '/users' do
   user = User.new(params[:user])
-  if user.save # why doesn't this work as ternary?
+  if user.save
     session[:user_id] = user.id
     redirect "/users/#{user.id}/profile"
   else

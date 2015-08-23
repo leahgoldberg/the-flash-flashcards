@@ -1,21 +1,18 @@
-<!-- needs to be passed a @deck object & a @card object @round object -->
-
 <h1><%= @deck.name %></h1>
 
-<% if flash[:message] %>
-  <%= flash[:message] %>
-<% end %>
 
 <div class="card">
   <%= @card.question %>
 </div>
 
-<% if @guess_num == 3 %>
-<%= @card.answer %>
-<p><a href="/games/<%=@game.id%>/rounds/new">Go to next card</a></p>
+<% if flash[:message] %>
+  	<%= flash[:message] %>
+<% end %>
+<% if flash[:wrong]%>
+    <%=flash[:wrong]%>
 <% end %>
 
 <div class="input-form">
-  <%= erb :'cards/_form', locals: {game: @game, card: @card} %>
+  <%= erb :'cards/_form', locals: {round: @round, card: @card} %>
 </div>
 
