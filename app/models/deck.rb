@@ -12,7 +12,7 @@ class Deck < ActiveRecord::Base
     self.cards.map! {|card| card.correct=false}
   end
 
-  def cards_correct?
+  def all_cards_correct?
     self.cards.all? {|card| card.correct}
   end  
 end
