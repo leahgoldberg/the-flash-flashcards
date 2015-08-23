@@ -7,7 +7,7 @@ class Round < ActiveRecord::Base
   #   self.guesses.count > self.deck.cards.count ?
   # end
 
-  def self.total_guesses
+  def total_guesses
     self.guesses.count
   end
 end
