@@ -7,9 +7,9 @@
 
 <% if flash[:message] %>
   	<%= flash[:message] %>
-	<% end %>
-	<%= @card.answer %>
-	<p><a href="/rounds/<%=@round.id%>/card/next">Go to next card</a></p>
+	<% if flash[:message]=="Wrong answer." %>
+		<%= @card.answer %>
+	<% end %>	
 <% end %>
 
 <div class="input-form">
