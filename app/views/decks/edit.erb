@@ -1,6 +1,26 @@
 <div class="container">
-  <h1 class="title">New Deck</h1>
-  <form action="/decks" method="POST">
-    <%= erb :"decks/_form", locals: { deck: @deck } %>
+  <h1 class="title">Edit '<%= @deck.name %>'</h1>
+  <form action="/decks/<%=@deck.id%>" method="POST">
+    <input type="hidden" name="_method" value="PUT" />
+
+    <p><label for="name">Name:</label>
+    <input id="name" type="text" name="deck[name]" value="<%= @deck.name %>"/>
+
+    <% @cards.each_with_index do |card, i| %>
+
+      <p><label for="question">Question:</label>
+      <input id="question" type="text" name="card[<%=i%>][question]" value="<%= card.question %>"/></p>
+
+      <p><label for="answer">Answer:</label>
+      <input id="answer" type="text" name="card[<%=i%>][answer]" value="<%= card.answer %>"/></p>
+
+    <% end %>
+
+    <input type="submit" value="Update"/></p>
+
   </form>
+
+
+
+
 </div>
