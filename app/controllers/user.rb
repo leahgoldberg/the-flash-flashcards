@@ -10,7 +10,7 @@ post '/users' do
 end
 
 get '/users/new' do
-  erb :'user/new'
+  erb :'users/new'
 end
 
 post '/users/login' do
@@ -25,13 +25,13 @@ post '/users/login' do
 end
 
 get '/users/login' do
-  erb :'user/login'
+  erb :'users/login'
 end
 
 get '/users/:id/profile' do
   user = current_user
   if logged_in?
-    erb :'user/profile'
+    erb :'users/profile'
   else
     redirect '/users/login'
   end
