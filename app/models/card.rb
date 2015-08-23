@@ -2,8 +2,8 @@ class Card < ActiveRecord::Base
   belongs_to :deck
   has_many :guesses
 
-  def has_incorrect_guesses?(current_round)
-    current_round_guesses(current_round).any? {|guess| guess.incorrect?}
+  def last_guess_incorrect?(current_round)
+    current_round_guesses(current_round).last.incorrect?
   end
 
   def has_no_guesses?(current_round)
