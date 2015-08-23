@@ -12,6 +12,7 @@ get '/decks/:id' do
   require_signin
   @deck = Deck.find_by(id: params[:id])
   @cards = @deck.cards
+  @creator = @deck.creator
   erb :'/decks/show'
 end
 
