@@ -1,3 +1,23 @@
-<div class="container">
-  This is your life!
+<h1><%= @user.username %>'s Profile</h1>
+
+<% @rounds.each do |round| %>
+<div class="round_container">
+  <h3><a href="/decks/<%=round.deck.id%>"><%= round.deck.name %></a></h3>
+  <table>
+    <tr>
+      <th>Date Played</th>
+      <th>Cards in Deck</th>
+      <th>First Guess Correct </th>
+      <th>Total Guesses</th>
+    </tr>
+    <tr>
+      <td><%= round.created_at %></td>
+      <td><%= round.deck.cards.length %></td>
+      <td><%= round.num_first_answer_correct %></td>
+      <td><%= round.guesses.length %></td>
+    </tr>
+  </table>
 </div>
+  <%end %>
+
+

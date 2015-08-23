@@ -13,6 +13,7 @@ end
 
 get "/users/:id" do
   @user = User.find_by(id: params[:id])
+  @rounds = Round.where(player_id: params[:id]).reverse
   erb :'users/show'
 end
 

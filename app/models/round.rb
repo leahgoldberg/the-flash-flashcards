@@ -13,4 +13,9 @@ class Round < ActiveRecord::Base
       card.has_no_guesses?(self) || card.last_guess_incorrect?(self)
     end
   end
+
+  def num_first_answer_correct
+    sql = "select count(*) from (select count(*) as cnt from guesses where round_id = #{self.id} group by card_id having count(*) = 1) as counts;"
+    ActiveRecord::Base.connection.execute(sql).getvalue(0,0)
+  end
 end
