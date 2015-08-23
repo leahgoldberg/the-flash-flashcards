@@ -15,4 +15,8 @@ class Deck < ActiveRecord::Base
   def all_cards_correct?
     self.cards.all? {|card| card.correct}
   end
+
+  def authored_by(id)
+    self.Deck.where("author = ?", id)
+  end
 end
