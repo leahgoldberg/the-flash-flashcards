@@ -12,6 +12,7 @@ get "/users/new" do
 end
 
 get "/users/:id" do
+  require_signin
   @user = User.find_by(id: params[:id])
   @rounds = Round.where(player_id: params[:id]).reverse
   erb :'users/show'

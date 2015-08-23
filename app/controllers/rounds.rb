@@ -9,12 +9,14 @@ post '/rounds' do
 end
 
 get "/round/:id/new" do
+  require_signin
   round = Round.find_by(id: params[:id])
   card = round.new_card
   redirect "/round/#{round.id}/card/#{card.id}"
 end
 
 get "/round/:id" do
+  require_signin
   @round = Round.find_by(id: params[:id])
   @player = @round.player
   @deck = @round.deck

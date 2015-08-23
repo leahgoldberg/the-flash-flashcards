@@ -18,8 +18,10 @@
   </header>
   <nav id='nav'>
     <a href="/">Home</a>
-    <a href="/users/<%= session[:user_id] %>">Stats</a>
-    <a href="/users/signout">Sign Out</a>
+    <% if signed_in? %>
+      <a href="/users/<%= session[:user_id] %>">Stats</a>
+      <a href="/users/signout">Sign Out</a>
+    <%end%>
   </nav>
 </div>
 
