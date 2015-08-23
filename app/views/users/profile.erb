@@ -22,6 +22,7 @@
         <td>Total Guesses</td>
       </tr>
       <% current_user.rounds.each do |round| %>
+        <% if round.completed %>
         <tr>
           <td><%=round.created_at.strftime("%d %B %Y")%></td>
           <td><%=round.deck.name%></td>
@@ -29,6 +30,7 @@
           <td></td>
           <td><%=round.total_guesses%></td>
         </tr>
+        <% end %>
       <% end %>
     </table>
   </div>

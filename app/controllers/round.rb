@@ -22,7 +22,7 @@ get '/rounds/:id/next' do
   end
 end
 
-get '/rounds/:id/done' do
+get 'deck/:deck_id/rounds/:id/done' do
 	@round = Round.find_by(id: params[:id])
   if @round
     @deck = @round.deck

@@ -7,6 +7,7 @@ post '/round/:round_id/cards/:id/guesses' do
 	if @card.user_correct?(params[:card][:answer])
 		@card.update_attribute(:correct, true)
 		if @deck.all_cards_correct?
+			@round.update_attribute(:completed, true)
 			redirect "/rounds/#{@round.id}/done"
 		else
 			flash[:message] = "Correct! Next question below"
