@@ -5,7 +5,7 @@ class Deck < ActiveRecord::Base
   validates_presence_of :name
 
   def random_card
-    self.cards.select {|card| card.correct}.sample
+    self.cards.select {|card| !card.correct}.sample
   end
 
   def reset_cards!

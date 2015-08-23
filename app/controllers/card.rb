@@ -1,16 +1,17 @@
-get '/rounds/:id/cards/next' do 
+get '/rounds/:id/cards/next' do
 	@round = Round.find_by(id: params[:id])
 	if @round
 		@deck = @round.deck
 		@card = @deck.random_card
+		# "#{@deck.name}, #{@card.id}"
 		redirect "/rounds/#{@round.id}/cards/#{@card.id}"
 	else
 		status 404
 		erb :'errors/not_found'
-	end	
-end	
+	end
+end
 
-get '/rounds/:round_id/cards/:id' do 
+get '/rounds/:round_id/cards/:id' do
 	@round = Round.find_by(id: params[:round_id])
 	@card = Card.find_by(id: params[:id])
 	if @round && @card
@@ -19,5 +20,5 @@ get '/rounds/:round_id/cards/:id' do
 	else
 		status 404
 		erb :'errors/not_found'
-	end  
-end	
+	end
+end
