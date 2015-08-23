@@ -9,9 +9,10 @@ class Deck < ActiveRecord::Base
     self.cards.shuffle.pop
   end
 
-  # def reset!
-  #   self.cards.each do |card|
-  #     card.used = false
-  #     card.save
-  # end
+  def reset_cards!
+    self.cards.each do |card|
+      card.used = false
+      card.save
+    end
+  end
 end
