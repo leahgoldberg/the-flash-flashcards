@@ -5,7 +5,7 @@ post '/guess' do
   if card.answer.downcase == params[:answer].downcase
     guess.correct = "true"
     guess.save!
-    flash[:correct] = "Correct!"
+    flash[:correct] = "Correct!  🎉 "
     if round.new_card.nil?
       redirect "/round/#{round.id}"
     end

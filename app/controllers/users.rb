@@ -23,7 +23,8 @@ put "/users/signin" do
     session[:user_id] = user.id
     redirect "/"
   else
-    "Either your username of email was incorrect.  Go back and try again."
+    flash[:sign_in_error] = "Either your username or email was incorrect."
+    redirect "/users/signin"
   end
 end
 
@@ -33,8 +34,7 @@ post "/user" do
     session[:user_id] = @user.id
     redirect "/"
   else
-    # flash[:error] = @user.errors.full_messages
-    # redirect "/users/new"
-    "SAD"
+    flash[:sign_up_error] = @user.errors.full_messages
+    redirect "/users/new"
   end
 end
