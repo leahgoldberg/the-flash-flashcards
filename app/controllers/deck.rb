@@ -35,6 +35,12 @@ put '/decks/:id' do
   end
 end
 
+delete '/decks/:id' do
+  @deck = Deck.find_by(id: params[:id])
+  @deck.destroy
+  erb :'/users/profile'
+end
+
 get '/decks' do
   @decks = Deck.all
   erb :'decks/index'
