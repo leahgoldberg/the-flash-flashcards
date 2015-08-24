@@ -1,4 +1,6 @@
-<div class="container"><%= @card.question %>
+<div class="container">
+  <div id="progressbar"></div>
+  <%= @card.question %>
   <div class="input">
     <form action="/guess" method="post">
       <input type="hidden" name="id" value="<%= @card.id %>">
@@ -8,3 +10,9 @@
     </form>
   </div>
 </div>
+
+<script>
+$( "#progressbar" ).progressbar({
+  value: <%=@round_stat%>
+});
+</script>

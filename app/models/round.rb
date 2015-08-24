@@ -18,4 +18,8 @@ class Round < ActiveRecord::Base
     sql = "select count(*) from (select count(*) as cnt from guesses where round_id = #{self.id} group by card_id having count(*) = 1) as counts;"
     ActiveRecord::Base.connection.execute(sql).getvalue(0,0)
   end
+
+  def progress
+    guesses.where(correct: "true").length.to_f / deck.cards.length.to_f * 100
+  end
 end

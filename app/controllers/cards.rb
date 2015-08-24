@@ -2,6 +2,7 @@ get "/round/:round_id/card/:id" do
   require_signin
   @card = Card.find_by(id: params[:id])
   @round = Round.find_by(id: params[:round_id])
+  @round_stat = @round.progress
   erb :"cards/show"
 end
 
