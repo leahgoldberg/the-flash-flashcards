@@ -86,3 +86,15 @@ form {
   background-color: #F0F8FF;
 }
 
+#circle {
+  position: relative;
+  left: 1em;
+}
+
+#circle strong {
+  position: relative;
+  right: 2.75em;
+  bottom: 1.625em;
+  font-size: 125%;
+}
+
