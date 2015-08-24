@@ -13,6 +13,7 @@ get '/decks/:id/cards/new' do
 end
 
 post '/decks/:id/cards' do
+  #ZM: NOPEEEEEEEEE Make this two separate controller methods
   if params[:action] == "Add Card"
     @deck = Deck.find_by(id: params[:id])
     @deck.cards.create(params[:card])

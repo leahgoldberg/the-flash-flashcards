@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   include BCrypt
+  
   has_many :decks, foreign_key: :creator_id
   has_many :rounds, foreign_key: :player_id
   has_many :guesses, through: :rounds

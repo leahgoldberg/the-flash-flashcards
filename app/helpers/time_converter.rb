@@ -14,6 +14,7 @@ helpers do
     12 => "December"
   }
 
+  #STRFTIME is the correct way to do this! 
   def convert_date_format(datetime)
     year = datetime.year
     month = MONTH_CONVERSION[datetime.month]

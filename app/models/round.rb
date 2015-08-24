@@ -4,12 +4,19 @@ class Round < ActiveRecord::Base
   has_many :guesses
   has_many :cards, through: :deck
 
+  #ZM: def initialize
+  #  super 
+  #  deck.cards.each{|card| card.round_id = self.id }
+  # end
+   
   def new_card
     available_cards.sample
   end
 
   def available_cards
+    #ZM: cards.select(:&is_availble?)
     cards.select do |card|
+      #ZM: We can combined these two into a single method... card.is_available?
       card.has_no_guesses?(self) || card.last_guess_incorrect?(self)
     end
   end

@@ -1,5 +1,6 @@
 get '/decks' do
   require_signin
+  #ZM: Limit this to like 100 max
   @decks = Deck.all
   erb :'/welcome/index'
 end
@@ -22,6 +23,7 @@ post '/decks' do
   if @deck.save!
     redirect "/decks/#{@deck.id}/cards/new"
   else
+    #ZM: What is the error?!? Why did my save not work???
     redirect '/'
   end
 end
