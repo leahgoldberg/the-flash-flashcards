@@ -20,6 +20,6 @@ class Round < ActiveRecord::Base
   end
 
   def progress
-    guesses.where(correct: "true").length.to_f / deck.cards.length.to_f * 100
+    guesses.where(correct: "true").length.to_f / deck.cards.length.to_f
   end
 end
