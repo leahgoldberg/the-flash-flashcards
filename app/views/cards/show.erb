@@ -1,5 +1,5 @@
 <div class="container">
-  <div id="progressbar"></div>
+  <div id="circle"><strong></strong></div>
   <%= @card.question %>
   <div class="input">
     <form action="/guess" method="post">
@@ -11,8 +11,15 @@
   </div>
 </div>
 
+
 <script>
-$( "#progressbar" ).progressbar({
-  value: <%=@round_stat%>
+  $('#circle').circleProgress({
+      value: <%= @round_stat %>,
+      size: 80,
+      fill: {
+          gradient: ["black", "#7FC7AF"]
+      }
+  }).on('circle-animation-progress', function(event, progress) {
+    $(this).find('strong').html(parseInt(<%= @round_stat * 100 %> * progress) + '<i>%</i>');
 });
 </script>
