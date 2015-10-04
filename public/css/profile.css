@@ -1,0 +1,65 @@
+#my-decks {
+  margin-top: 20px;
+}
+
+.profile, .stats {
+  list-style: none;
+}
+
+.profile li, .stats li {
+  margin-top: 10px;
+  font-size:20px;
+  color: black;
+  margin-left: -5px ;
+}
+
+.profile-container{
+  display:block;
+  border: 1px dashed black;
+  border-radius: 20px;
+  width:75%;
+  margin:0 auto;
+  padding:10px 20px 10px 20px;
+}
+
+.profile-container h2 {
+  margin-left: 30px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.profile-container a {
+  color: black;
+}
+
+.profile-container li {
+  color: black;
+  list-style: none;
+  margin-left: -5px;
+}
+
+.profile-container li a {
+  font-weight: 400;
+}
+
+.profile-container table {
+  margin: 20px 30px 20px 30px;
+}
+
+.stats-header td {
+  font-family: "Quicksand", sans-serif;
+  font-size: 12pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 20px;
+}
+
+.stats-row td {
+  font-family: "Quicksand", sans-serif;
+  font-size: 12pt;
+  padding-right: 20px;
+  padding-bottom: 5px;
+}
+
+

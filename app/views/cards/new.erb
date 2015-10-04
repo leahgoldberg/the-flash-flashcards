@@ -1,0 +1,8 @@
+<div class="container">
+  <h1 class="title">New Card for '<%= @deck.name %>'</h1>
+  <form action="/decks/<%=@deck.id%>/cards" method="POST">
+    <%= erb :"cards/_new_form", locals: { card: @card } %>
+  </form>
+</div>
+
+<h1 class="title"><a href="/decks">Done Adding Cards</a></h1>

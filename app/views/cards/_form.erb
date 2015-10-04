@@ -1,0 +1,6 @@
+<form action="/round/<%=@round.id%>/cards/<%=@card.id%>/guesses" method="POST">
+  <label for="answer">Answer</label>
+  <p><input id="answer" type="text" name="card[answer]" /></p>
+
+  <p><input type="submit" value="Guess"/></p>
+</form>

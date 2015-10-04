@@ -1,0 +1,20 @@
+<h1 class ="deck_name"><%= @deck.name %></h1>
+
+<% if flash[:message] %>
+  	<p class="answer-correct"><%= flash[:message] %></p>
+<% end %>
+<% if flash[:wrong]%>
+    <p class="answer-wrong"><%=flash[:wrong]%></p>
+<% end %>
+
+<div class="card">
+  <p class="card_question"><%= @card.question %></p>
+</div>
+
+
+<div class="input-form">
+  <div class="answer">
+  <%= erb :'cards/_form', locals: {round: @round, card: @card} %>
+</div>
+</div>
+

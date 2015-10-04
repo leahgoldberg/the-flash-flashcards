@@ -1,0 +1,26 @@
+  <h1 class="title">New User Registration</h1>
+<div class="container">
+  <div class="errors">
+  <% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+   <p class="error-message"><%= error %></p>
+  <% end %>
+  <%end%>
+ </div>
+
+  <form action="/users" method="POST">
+      <label for="first_name">First Name</label>
+      <p><input id="first_name" type="text" name="user[first_name]" /></p>
+
+      <label for="last_name">Last Name</label>
+      <p><input id="last_name" type="text" name="user[last_name]" /></p>
+
+      <label for="email">Email</label>
+      <p><input id="email" type="text" name="user[email]" /></p>
+
+      <label for="password">Password</label>
+      <p><input id="password" type="password" name="user[password]" /></p>
+
+      <p><input type="submit" value="Save"/></p>
+  </form>
+</div>

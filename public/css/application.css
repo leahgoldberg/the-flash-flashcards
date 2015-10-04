@@ -1,0 +1,281 @@
+.title {
+  text-align: center;
+  font-family: 'Quicksand',sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 24pt;
+  color: #FFCC00;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.title a {
+  color: #FFCC00;
+}
+
+#main-title {
+  margin-top: 300px;
+  font-size: 50pt;
+}
+.deck {
+  width: 150px;
+  height: 120px;
+  display: inline-block;
+  margin: 20px 0px 20px 50px;
+  padding: 0px 20px 20px 20px;
+  border: 3px solid black;
+  border-radius: 20px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+  font-family: 'Quicksand',sans-serif;
+  font-weight: 700;
+}
+.deck div {
+  margin-top: 55px;
+}
+.deck:hover {
+  text-decoration: none;
+  background-color: #FFCC00;
+}
+
+ .input_form {
+  /*display: block;*/
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 100px;
+  margin: 20px auto;
+}
+
+.answer{
+text-align: center;
+padding-top:75px;
+font-size:20px;
+}
+
+
+
+.deck_name{
+margin-top: 175px;
+text-align: center;
+font-family: 'Quicksand',sans-serif;
+
+}
+
+.card {
+width: 500px;
+height: 200px;
+margin:auto;
+border: 3px solid black;
+border-radius: 20px;
+font-size: 18px;
+font-family: 'Quicksand',sans-serif;
+text-align: center;
+margin-top:75px;
+ }
+
+ .card_question {
+padding: 20px;
+  margin-top:60px;
+ }
+
+
+th {
+  text-align: left;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.header {
+  border-bottom: 3px solid #cc0000;
+  height: 80px;
+  background-color: #e50000;
+  box-shadow: 0px 5px 5px #d4d4d4;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+}
+#logo {
+  margin-left: 50px;
+  margin-top: 20px;
+  float: left;
+}
+#logo img{
+  margin-top: -10px;
+  float: left;
+}
+#logo h1 {
+  float: right;
+  color: white;
+  margin-top: -3px;
+  margin-left: 5px;
+}
+#logo h1 a {
+  font-family: 'Codystar', sans-serif;
+  font-weight: 400;
+  font-size: 30pt;
+}
+.header ul {
+  margin-right: 50px;
+  float: right;
+  list-style: none;
+  margin-top: 20px;
+}
+.header li {
+  display: inline-block;
+  padding: 5px;
+}
+.header a,li {
+  font-family: 'Quicksand',sans-serif;
+  font-weight: 300;
+  font-size: 14pt;
+  color: white;
+  text-decoration: none;
+}
+
+.header li {
+  font-weight: 400;
+}
+
+.header a:hover {
+  font-weight: 400;
+}
+.content {
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+.footer {
+  border-top: 3px solid #cc0000;
+  height: 50px;
+  background-color: #e50000;
+  box-shadow: -5px -5px 5px #d4d4d4;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+}
+
+.profile, .stats {
+  list-style: none;
+}
+
+.profile li, .stats li {
+  margin-top: 10px;
+  font-size:20px;
+  color: black;
+}
+
+.container{
+  display:block;
+  border: 1px dashed black;
+  border-radius: 20px;
+  height:75% ;
+  width:50%;
+  margin:0 auto;
+  padding:30px;
+}
+
+.container p, label {
+  font-size:20px;
+  color: black;
+  font-family: 'Quicksand',sans-serif;
+}
+
+.right-container{
+  display:block;
+  border: 1px dashed black;
+  border-radius: 20px;
+  height:200px ;
+  width:75%;
+  margin:0 auto;
+  padding:30px;
+}
+
+.left-container{
+  display:block;
+  border: 1px dashed black;
+  border-radius: 20px;
+  height:200px ;
+  width:75%;
+  margin-bottom: 30px;
+  margin:0 auto;
+  padding:30px;
+}
+
+.spacer{
+  margin:50px;
+}
+
+#play-deck {
+  padding-right: 20px;
+  vertical-align: middle;
+}
+
+#create-deck {
+  padding-left: 20px;
+  vertical-align: middle;
+}
+
+input[type="submit"] {
+  font-family: "Quicksand";
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.answer-correct, .answer-wrong {
+  margin-top: 15px;
+  margin-bottom: -5px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 14pt;
+  font-weight: 400;
+  text-align: center;
+}
+
+.error-message {
+  margin-top: -5px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 14pt;
+  font-weight: 400;
+}
+
+.errors p{
+  color: red;
+}
+
+.answer-correct {
+  color: #00FF00;
+}
+
+.answer-wrong {
+  color: red;
+}
+
+.done-page {
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+.or-bars {
+  font-size: 28pt;
+  vertical-align: middle;
+}
+
+.error-pic img{
+  display: block;
+  margin: 0 auto;
+}
+
+
+
+

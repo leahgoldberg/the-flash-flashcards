@@ -1,0 +1,24 @@
+ <header class="header">
+  <section id="logo">
+    <img src="http://img1.wikia.nocookie.net/__cb20140529051349/marvel_dc/images/d/df/Flash_Logo_01.png" height=60px>
+    <h1><a href="/">Flashcards</a></h1>
+  </section>
+
+  <ul>
+<!--     <li><a href="/decks">All Decks</a></li> -->
+
+    <% if logged_in? %>
+      <li>Hello, <%= current_user.first_name %>!</li>
+      <li><a href="/users/<%=current_user.id%>/profile">Profile</a></li>
+      <li><a href="/users/logout">Logout</a></li>
+    <% else %>
+      <li><a href="/decks">Play Flashcards!</a></li>
+      <li><a href="/users/login">Login</a></li>
+      <li><a href="/users/new">Sign up</a></li>
+    <% end %>
+  </ul>
+</header>
+
+
+
+
